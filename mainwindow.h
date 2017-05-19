@@ -35,9 +35,9 @@ public:
     my_taxi_server *serv;
 
 protected slots:
-        void append_server_message(QString);
-
-
+    // Когда сложный объект не модифицируешь, всегда используй константную ссылку.
+    // Так эффективнее, обходишься без ненужных копирований.
+    void append_server_message(const QString &message);
 
 
 private slots:

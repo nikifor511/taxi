@@ -60,9 +60,9 @@ void MainWindow::on_pushButton_3_clicked()
     qApp->exit();
 }
 
-void MainWindow::append_server_message(QString mes)
+void MainWindow::append_server_message(const QString &message)
 {
-    ui->label_2->setText(mes);
+    ui->label_2->setText(message);
 }
 
 void MainWindow::newuser()
@@ -74,7 +74,7 @@ void MainWindow::on_pushButton_5_clicked()
 {
    serv = new my_taxi_server;
 
-   connect(serv, SIGNAL(add_text(QString)), this, SLOT(append_server_message(QString mes)) );
+   connect(serv, SIGNAL(add_text(QString)), this, SLOT(append_server_message(QString)));
 
 //     tcpServer = new QTcpServer(this);
 //     connect(tcpServer, SIGNAL(newConnection()), this, SLOT(newuser()));
