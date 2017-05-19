@@ -23,7 +23,7 @@ public:
     //MainWindow *window;
 
 signals:
-    add_text(QString);
+    void add_text(const QString &text);
 
 public slots:
     void connect_new();
